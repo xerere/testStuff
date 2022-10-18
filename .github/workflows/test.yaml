@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: | 
-        ${{ myinput }}
+        ${{ inputs.myinput }}
        
     steps:
       - run: echo "${{ matrix.a }}"
