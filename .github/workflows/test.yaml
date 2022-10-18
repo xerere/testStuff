@@ -20,5 +20,5 @@ jobs:
 
        
     steps:
-      - run: echo "${{ fromJSON(env.MYINPUT) }}"
+      - run: echo "${{ parse(env.MYINPUT) }}"
   
