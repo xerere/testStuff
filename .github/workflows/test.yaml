@@ -15,14 +15,10 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
-    strategy:
-      matrix: 
-        include: >
-          [ 
-            {"a": "a1"}, 
-            {"b", "a1"}
-          ]
+    env:
+      MYINPUT: ${{ inputs.myinput }} 
+
        
     steps:
-      - run: echo "${{matrix.a}}" 
+      - run: echo "${{ fromJSON(env.MYINPUT) }}"
   
