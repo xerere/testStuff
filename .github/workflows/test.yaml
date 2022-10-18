@@ -2,16 +2,27 @@ name: build
 on: 
   workflow_dispatch:
     inputs:
-      a:
+      myinput:
         type: string
-        default: '[ {"a":"a1"}, {"a", "a2"} ]'
+        default: >
+          [ 
+            {"a": "a1"}, 
+            {"b", "a1"}
+          ]
+          
+
 jobs:
-  job1:
+
+  job2:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        includes: >-
-          ${{ fromJSON(inputs.a) }}
+        include: >
+          [ 
+            {"a": "a1"}, 
+            {"b", "a1"}
+          ]
+       
     steps:
       - run: echo "${{matrix.a}}" 
   
