@@ -12,10 +12,10 @@ on:
       myinput2:
         type: string
         default: |
-          {
-            "a": [1,2],
-            "b": [10,20]
-          }
+          [
+            "aaa",
+            "bbb"
+          ]
 
 jobs:
 
