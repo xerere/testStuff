@@ -4,7 +4,11 @@ on:
     inputs:
       myinput:
         type: string
-        default: '{"a":[1,2]}'
+        default: |
+          {
+            "a": [1,2],
+            "b": [10,20]
+          }
 
 jobs:
 
