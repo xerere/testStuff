@@ -9,14 +9,25 @@ on:
             "a": [1,2],
             "b": [10,20]
           }
+      myinput2:
+        type: string
+        default: |
+          {
+            "a": [1,2],
+            "b": [10,20]
+          }
 
 jobs:
 
   job2:
     runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJSON(inputs.myinput) }}
+    #strategy:
+      #matrix: ${{ fromJSON(inputs.myinput) }}
        
     steps:
-      - run: echo "a:${{ matrix.a }} b:${{ matrix.b }}"
-  
+      
+      # - run: echo "a:${{ matrix.a }} b:${{ matrix.b }}"
+      - 
+        env:
+          X: ${{ fromJSON(inputs.myinput) }}
+        run: echo ${{ env.X }}
