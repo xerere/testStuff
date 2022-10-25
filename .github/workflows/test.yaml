@@ -28,6 +28,4 @@ jobs:
       
       # - run: echo "a:${{ matrix.a }} b:${{ matrix.b }}"
       - 
-        env:
-          X: ${{ fromJSON(inputs.myinput2) }}
-        run: echo ${{ env.X }}
+        run: echo ${{ inputs.myinput }} | jq .b[1]
