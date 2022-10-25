@@ -4,19 +4,14 @@ on:
     inputs:
       myinput:
         type: string
-        default: >-
-            a: 1 
-            a: 2
-          
-          
+        default: '[{"a":1},{"a":2}]'
 
 jobs:
 
   job2:
     runs-on: ubuntu-latest
     strategy:
-      matrix: | 
-        ${{ inputs.myinput }}
+      matrix: ${{ fromJSON(inputs.myinput) }}
        
     steps:
       - run: echo "${{ matrix.a }}"
