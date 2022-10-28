@@ -27,7 +27,7 @@ jobs:
   debug-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ toJSON(job-to-be-canceled) }}
+      - run: echo ${{ toJSON(needs.job-to-be-canceled) }}
     
   job2:
     runs-on: ubuntu-latest
