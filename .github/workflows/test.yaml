@@ -1,5 +1,6 @@
 name: build
 on: 
+  push:
   workflow_dispatch:
     inputs:
       myinput:
@@ -27,7 +28,7 @@ jobs:
   debug-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ toJSON(jobs.job-to-be-canceled) }}
+      - run: echo ${{ toJSON(needs.job-to-be-canceled) }}
     
   job2:
     runs-on: ubuntu-latest
