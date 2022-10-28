@@ -18,7 +18,17 @@ on:
           ]
 
 jobs:
-
+  job-to-be-canceled:
+    runs-on: ubuntu-latest
+    if: 1==0
+    steps:
+      - run: echo "nothing to say"
+    
+  debug-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ toJSON(jobs) }}
+    
   job2:
     runs-on: ubuntu-latest
     #strategy:
