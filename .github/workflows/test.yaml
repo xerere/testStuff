@@ -19,9 +19,9 @@ on:
           ]
       myinput3:
         type: string
-        default: >
-          "a=1,\
-          b=2"
+        default: |-
+          a=1,
+          b=2
 
 jobs:
   job-to-be-canceled:
@@ -42,7 +42,6 @@ jobs:
       #matrix: ${{ fromJSON(inputs.myinput) }}
        
     steps:
-      
       # - run: echo "a:${{ matrix.a }} b:${{ matrix.b }}"
       - 
         run: echo $(${{ inputs.myinput }} | jq .b[1])
