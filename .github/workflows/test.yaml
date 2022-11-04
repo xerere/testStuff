@@ -17,9 +17,11 @@ on:
             "aaa",
             "bbb"
           ]
-      myinput3: >-
-        a=1,
-        b=2
+      myinput3:
+        type: string
+        default: >-
+          a=1,
+          b=2
 
 jobs:
   job-to-be-canceled:
