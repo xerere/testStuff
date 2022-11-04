@@ -24,9 +24,9 @@ jobs:
     if: 1==1
     steps:
       - run: >-
-          echo "aaa--\
-          bbb--\
-          cc"
+          echo aaa--
+          bbb--
+          cc
           
     
   debug-job:
