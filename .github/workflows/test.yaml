@@ -34,7 +34,7 @@ jobs:
             x=10,
             y=20,
             z=30
-        run: echo ${{ env.i4 }}
+        run: echo "${{ env.i4 }}"
       
   job-to-be-canceled:
     runs-on: ubuntu-latest
