@@ -4,20 +4,23 @@ on:
   workflow_call:
     inputs:
       i1:
+        description: i1 desc
         required: false
+        type: string
     secrets:
       s1:
         required: false
     outputs:
-      o1:
+      o1: 
+        value: ${{ jobs.j1.outputs.j1o1 }}
 
 jobs:
-  push-helm-chart:
+  j1:
     runs-on: ["self-hosted", "l8ng-test"]
-    name: Push Helm Chart
     outputs:
-      chart_version: "${{ steps.get-chart-version.outputs.chart_version }}"
+      j1o1: "${{ steps.j1s1.outputs.j1s1 }}"
     steps:
-      - run: |
+      - id: j1s1
+        run: |
           echo "i1(${{inputs.i1}})"
-          echo "::set-output name=o1::o1value"
+          echo "::set-output name=j1s1::j1s1value"
