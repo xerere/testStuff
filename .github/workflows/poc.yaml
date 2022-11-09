@@ -1,0 +1,22 @@
+name: poc
+on: 
+  workflow_dispatch:
+   
+jobs:
+  test-with-env:
+    runs-on: ubuntu-latest
+   
+  
+  job-w1:
+    runs-on: ubuntu-latest
+    uses: w1.yaml@master
+      with:
+        i1: cebola
+      secrets:
+        s1: batata
+
+  job-w2:
+    runs-on: ubuntu-latest
+    needs: job-w1
+    steps:
+      - run: echo o1(${{ needs.job-w1.outputs.o1 }})
