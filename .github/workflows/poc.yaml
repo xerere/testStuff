@@ -8,11 +8,10 @@ jobs:
    
   
   job-w1:
-    runs-on: ubuntu-latest
-    uses: w1.yaml@master
-      with:
+    uses: ./.github/workflows/w1.yaml
+    with:
         i1: cebola
-      secrets:
+    secrets:
         s1: batata
 
   job-w2:
