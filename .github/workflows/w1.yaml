@@ -22,5 +22,5 @@ jobs:
     steps:
       - id: j1s1
         run: |
-          echo "i1(${{inputs.i1}})"
+          echo "i1 ${{ inputs.i1 }} "
           echo "::set-output name=j1s1::j1s1value"
