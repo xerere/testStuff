@@ -1,0 +1,23 @@
+name: w1
+
+on:
+  workflow_call:
+    inputs:
+      i1:
+        required: false
+    secrets:
+      s1:
+        required: false
+    outputs:
+      o1:
+
+jobs:
+  push-helm-chart:
+    runs-on: ["self-hosted", "l8ng-test"]
+    name: Push Helm Chart
+    outputs:
+      chart_version: "${{ steps.get-chart-version.outputs.chart_version }}"
+    steps:
+      - run: |
+          echo "i1(${{inputs.i1}})"
+          echo "::set-output name=o1::o1value"
