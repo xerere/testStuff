@@ -3,9 +3,6 @@ on:
   workflow_dispatch:
    
 jobs:
-  test-with-env:
-    runs-on: ubuntu-latest
-   
   
   job-w1:
     uses: ./.github/workflows/w1.yaml
