@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: job-w1
     steps:
-      - run: echo o1(${{ needs.job-w1.outputs.o1 }})
+      - run: echo o1 ${{ needs.job-w1.outputs.o1 }}
