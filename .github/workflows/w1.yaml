@@ -16,7 +16,7 @@ on:
 
 jobs:
   j1:
-    runs-on: ["self-hosted", "l8ng-test"]
+    runs-on: ubuntu-latest
     outputs:
       j1o1: "${{ steps.j1s1.outputs.j1s1 }}"
     steps:
